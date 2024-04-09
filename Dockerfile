@@ -12,8 +12,13 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libjpeg62-turbo-dev \
     zlib1g-dev \
     libwebp-dev \
+    curl \
     gettext \
  && rm -rf /var/lib/apt/lists/*
+
+# Nodejs plus npm is required for webpack (to generate bundles)
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get update && apt-get install -y nodejs
 
 # Add group:user that will be used in the container.
 RUN groupadd --gid 2000 wagtail
@@ -28,6 +33,11 @@ RUN chown wagtail:wagtail /src
 # Python dependencies
 COPY requirements.txt /src/
 RUN pip install -r /src/requirements.txt
+
+# JS dependencies
+COPY package.json /src/
+COPY package-lock.json /src/
+RUN npm install
 
 # Copy the source code of the project into the container.
 COPY --chown=wagtail:wagtail . /src

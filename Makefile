@@ -1,8 +1,17 @@
 init:
 	test -n "$(name)"
 	rm -rf ./.git
-	find ./ -type f -exec perl -pi -e 's/project_name/$(name)/g' *.* {} \;
+	find ./ -type f -exec perl -pi -e 's/project_name/'"$(name)"'/g' {} \;
 	mv ./project_name ./$(name)
+
+npm-install:
+	docker exec -it project_name npm install
+
+vite:
+	docker exec -it project_name npm run dev
+
+vite-build:
+	docker exec -it project_name npm run build
 
 superuser:
 	docker exec -it project_name ./manage.py createsuperuser

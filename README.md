@@ -20,6 +20,7 @@ Wagtail 4.1 + Django 4.1 + Webpack + Postgres 11 + Dokku config (Production Read
 │   ├── tests.py (We hope you will put some tests here :D)
 │   ├── urls.py (Main urls, place the home page here)
 │   └── views.py
+├── assets (js, stylesheets, etc to create bundle using vite)
 ├── media
 ├── project_name
 │   ├── settings
@@ -50,13 +51,6 @@ Clone the repository, and update your origin url:
 ```
 git clone https://github.com/helixsoftco/wagtail-webpack-dokku project_name
 cd project_name
-```
-
-Merge the addons required by your project (Optional):
-```
-git merge origin/rest
-git merge origin/webpack
-git merge origin/push-notifications
 ```
 
 Rename your project files and directories:
@@ -96,6 +90,16 @@ To remove the docker containers including the database (Useful sometimes when de
 ```
 docker-compose down
 ```
+
+#### Assets development with vite
+
+After the containers are running, the webpack bundle is required in order to render the statics, so just run:
+
+```
+make vite
+```
+
+The previous command will generate the bundle for vite once.
 
 ### Accessing Administration
 

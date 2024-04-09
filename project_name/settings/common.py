@@ -28,6 +28,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 DEPENDENCIES_APPS = [
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
+    'wagtail.contrib.search_promotions',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -37,10 +38,8 @@ DEPENDENCIES_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail',
-
     'modelcluster',
     'taggit',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,8 +56,8 @@ PROJECT_APPS = [
 
 ADDONS = [
     # Pick the Addons you want
-    # To use Webpack, uncomment next line
-    # 'webpack_loader',
+    # To use Vite, uncomment next line
+    'django_vite',
     # To use Rest Framework uncomment next line
     # 'rest_framework',
     # To use Push Notifications uncomment next line
