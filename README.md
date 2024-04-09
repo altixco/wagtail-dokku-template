@@ -1,6 +1,5 @@
 # project_name
-
-Wagtail 4.1 + Django 4.1 + Webpack + Postgres 11 + Dokku config (Production Ready)
+Django 4.2 + Wagtail 6.0.2 + Vite 5.0.10 + Tailwind 3.4.3 + Postgres 12 + Dokku config (Production Ready)
 
 ## Documentation ##
 
