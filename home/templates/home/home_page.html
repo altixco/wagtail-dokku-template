@@ -4,13 +4,14 @@
 {% block body_class %}template-homepage under-development{% endblock %}
 
 {% block extra_css %}
-
+  <link rel="stylesheet" href="{% static 'css/home_page.css' %}"/>
 {% endblock extra_css %}
 
 {% block content %}
-  <div class="container text-center">
-  <div class="logo mb-3"></div>
-  <h1 class="text-3xl font-bold underline">
-    ¡Sitio web en desarrollo!
-  </h1>
+<div class="flex justify-center items-center w-screen h-screen bg-gray-900">
+  <div class="w-60 h-60 bg-white relative rounded-lg flex flex-col justify-center items-center">
+      <div class="font-medium text-xl">Thank you 🙏</div>
+      <div class="text-sm text-gray-500">{{ develop_text }}.</div>
+  </div>
+</div>
 {% endblock content %}
