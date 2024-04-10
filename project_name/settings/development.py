@@ -47,6 +47,18 @@ else:
         }
     }
 
+STATICFILES_DIRS += [
+    os.path.join(BASE_DIR, 'assets')
+]
+
+DJANGO_VITE = {
+  "default": {
+    "dev_mode": True
+  }
+}
+
+DJANGO_VITE_DEV_MODE = os.environ.get("DJANGO_VITE_DEV_MODE", True)
+
 # Temporal settings
 try:
     from .temp import *
