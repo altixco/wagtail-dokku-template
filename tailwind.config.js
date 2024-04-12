@@ -15,6 +15,8 @@ export default {
 
     /* Ignore any JavaScript in node_modules folder. */
     '!**/node_modules',
+
+    './assets/**/*.{vue,js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {},

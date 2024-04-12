@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load wagtailsettings_tags i18n %}
+{% get_settings %}
+
+
+{% block body %}
+  <!-- Page Wrap -->
+  <div id="vueApp" class="page">
+
+    <main id="main">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include "layouts/components/footer.html" %}
+  </div>
+  <!-- End Page Wrap -->
+{% endblock %}

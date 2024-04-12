@@ -21,7 +21,7 @@ export default defineConfig((mode) => {
   // @ts-ignore
   const env = loadEnv(mode, process.cwd(), '');
 
-  const INPUT_DIR = './assets';
+  const INPUT_DIR = './assets/vite_assets';
   const OUTPUT_DIR = './static/vite_bundles';
 
   return {
@@ -44,6 +44,7 @@ export default defineConfig((mode) => {
       host: env.DJANGO_VITE_DEV_SERVER_HOST,
       port: 5173,
     },
+    assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf'],
     build: {
       manifest: true,
       emptyOutDir: true,
