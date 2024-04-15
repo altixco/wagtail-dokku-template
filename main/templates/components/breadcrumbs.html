@@ -1,0 +1,17 @@
+{% load static wagtailcore_tags %}
+
+<div class="flex items-center">
+  {% if self.get_ancestors|length > 1 %}
+    {% for page in self.get_ancestors %}
+      {% if not page.is_root %}
+        <a href="{% pageurl page %}" class="font-bold">{{ page.title }}</a>
+      {% endif %}
+      {% if forloop.counter0 > 0 %}
+        <span class="mx-2">
+          <i class="fas fa-chevron-right"></i>
+        </span>
+      {% endif %}
+    {% endfor %}
+    <span>{{ page.title }}</span>
+  {% endif %}
+</div>

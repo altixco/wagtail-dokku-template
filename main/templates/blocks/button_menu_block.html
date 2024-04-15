@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %}
+
+<div class="button-menu">
+    {% for button in value.buttons %}
+        {% include_block button %}
+    {% endfor %}
+</div>

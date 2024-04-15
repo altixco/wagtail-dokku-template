@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load wagtailsettings_tags i18n %}
+{% get_settings %}
+
+
+{% block body %}
+  <!-- Page Wrap -->
+  <div class="page">
+    <div id="main">
+      {% block content %}{% endblock %}
+    </div>
+
+    {% include "layouts/components/footer.html" %}
+  </div>
+  <!-- End Page Wrap -->
+{% endblock %}

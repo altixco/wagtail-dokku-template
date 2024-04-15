@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layouts/default.html" %}
 {% load static %}
 
 {% block body_class %}template-homepage under-development{% endblock %}
@@ -8,10 +8,20 @@
 {% endblock extra_css %}
 
 {% block content %}
-<div class="flex justify-center items-center w-screen h-screen bg-gray-900">
-  <div class="w-60 h-60 bg-white relative rounded-lg flex flex-col justify-center items-center">
+  <div class="flex justify-center items-center w-screen h-screen bg-gray-900">
+    <div class="w-100 h-60 bg-white relative rounded-lg flex flex-col justify-center items-center">
       <div class="font-medium text-xl">Thank you 🙏</div>
       <div class="text-sm text-gray-500">{{ develop_text }}.</div>
+       <span class="mx-2">
+          <i class="fa-solid fa-chevron-left"></i>
+          <i class="fa-solid fa-chevron-right"></i>
+        </span>
+      <demo-component
+        class="px-2 relative"
+        v-slot="{ images, getImageFormat }"
+        :title="'{{ develop_text }}'"      >
+      </demo-component>
+    </div>
+
   </div>
-</div>
 {% endblock content %}

@@ -1,0 +1,17 @@
+<section class="py-10">
+  <div class="container mx-auto relative">
+    <div class="bg-red-500 text-white p-4 rounded-lg" role="alert">
+      <div class="font-bold text-lg my-0">
+        <b>{{ self.title }}</b>
+      </div>
+
+      {% if self.description %}
+        <div class="text-base">
+          {{ self.description }}
+
+          {{ last_news self.last_news_number}}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

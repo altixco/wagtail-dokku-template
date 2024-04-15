@@ -1,0 +1,11 @@
+{% load wagtailimages_tags wagtailcore_tags %}
+
+<div class="tooltip" data-tooltip="{{ value.tooltip }}">
+  {% if value.internal_url %}
+  <a href="{% pageurl value.internal_url %}">
+    {% if value.icon %}
+    <img src="{% image value.icon fill-30x30 %}" alt="{{ value.tooltip }}">
+    {% endif %}
+  </a>
+  {% endif %}
+</div>
