@@ -19,8 +19,7 @@ const postcssConfig = {
 
 export default defineConfig((mode) => {
   // @ts-ignore
-  const env = loadEnv(mode, process.cwd(), '');
-
+  const env = loadEnv(mode, process.cwd(), '')
   const INPUT_DIR = './assets/vite_assets';
   const OUTPUT_DIR = './static/vite_bundles';
 
@@ -32,7 +31,6 @@ export default defineConfig((mode) => {
     resolve: {
       alias: {
         '@': resolve(INPUT_DIR),
-        'vue': 'vue/dist/vue.esm-bundler.js',
       },
     },
     root: resolve(INPUT_DIR),
@@ -41,8 +39,9 @@ export default defineConfig((mode) => {
       postcss: postcssConfig,
     },
     server: {
+      origin: env.DJANGO_VITE_DEV_SERVER_ORIGIN,
       host: env.DJANGO_VITE_DEV_SERVER_HOST,
-      port: 5173,
+      port: env.DJANGO_VITE_DEV_SERVER_PORT,
     },
     assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf'],
     build: {
@@ -51,7 +50,7 @@ export default defineConfig((mode) => {
       outDir: resolve(OUTPUT_DIR),
       rollupOptions: {
         input: {
-          home: join(INPUT_DIR, '/js/app.ts'),
+          main: join(INPUT_DIR, '/js/app.ts'),
           css: join(INPUT_DIR, '/css/app.css.js'),
         },
       },

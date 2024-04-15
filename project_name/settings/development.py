@@ -57,7 +57,7 @@ DJANGO_VITE = {
   }
 }
 
-DJANGO_VITE_DEV_MODE = os.environ.get("DJANGO_VITE_DEV_MODE", True)
+DJANGO_VITE_DEV_MODE = True
 
 # Temporal settings
 try:

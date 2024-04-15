@@ -29,6 +29,7 @@
   {# Global stylesheets #}
   {% vite_hmr_client %}
   {% vite_asset 'css/app.css' %}
+  {% vite_preload_asset "src/entry.ts" %}
 
   {% block extra_css %}
   {# Override this in templates to add extra stylesheets #}

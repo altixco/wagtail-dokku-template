@@ -1,5 +1,6 @@
 /* JS */
 // Babel Polyfills (Enable use of modern javascript)
+import 'vite/modulepreload-polyfill'
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 // esm-bundlers includes the compiler, the compiler is needed for in-DOM templates or templates via inline JavaScript strings

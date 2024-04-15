@@ -29,6 +29,7 @@ else:
         }
     }
 
+DJANGO_VITE_DEV_MODE = False
 
 # Email Config
 """
